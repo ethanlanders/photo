@@ -7,7 +7,7 @@
 
 /* Base styles */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #111;
   background-color: #fff;
   line-height: 1.6;
@@ -20,14 +20,35 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+/* Responsive: screens smaller than 480px */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem; /* smaller font to fit on one line */
+  }
+  
+  .hero p {
+    font-size: 1rem; /* optional: slightly smaller subtitle */
+  }
+
+  section h2 {
+    font-size: 1.1rem; /* smaller, still readable */
+  }
+
+  section {
+    padding: 40px 15px;
+  }
 }
 
 .hero p {
   margin-top: 10px;
   font-size: 1.1rem;
-  color: #555;
+  color: #666;
 }
 
 /* Sections */
@@ -41,9 +62,11 @@ h2 {
   font-size: 1.4rem;
   font-weight: 500;
   margin-bottom: 30px;
+  letter-spacing: -0.01em;
 }
 
 /* Portfolio grid */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -61,6 +84,7 @@ h2 {
 .about p {
   max-width: 700px;
   color: #444;
+  font-weight: 400;
 }
 
 /* Contact */
@@ -78,3 +102,4 @@ h2 {
 .contact a:hover {
   text-decoration: underline;
 }
+ 
