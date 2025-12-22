@@ -7,10 +7,12 @@
 
   <title>Ethan Landers Photo</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css?v=1">
 </head>
 
@@ -27,18 +29,19 @@
     <h2>Selected Work</h2>
 
     <div class="grid">
-        <img src="images/photo12.jpg" alt="Portrait photo">
-        <img src="images/photo11.jpg" alt="Portrait photo">
-        <img src="images/photo10.jpg" alt="Portrait photo">
-        <img src="images/photo9.jpg" alt="Portrait photo">
-        <img src="images/photo8.jpg" alt="Portrait photo">
-        <img src="images/photo7.jpg" alt="Landscape photo">
-        <img src="images/photo6.jpg" alt="Portrait photo">
-        <img src="images/photo5.jpg" alt="Portrait photo">
-        <img src="images/photo4.jpg" alt="Landscape photo">
-        <img src="images/photo3.jpg" alt="Landscape photo">
-        <img src="images/photo2.jpg" alt="Portrait photo">
-      <img src="images/photo1.jpg" alt="Portrait photo">
+        <!-- lazy loading added -->
+        <img src="images/photo12.jpg" alt="Portrait photo" loading="lazy">
+        <img src="images/photo11.jpg" alt="Portrait photo" loading="lazy">
+        <img src="images/photo10.jpg" alt="Portrait photo" loading="lazy">
+        <img src="images/photo9.jpg" alt="Portrait photo" loading="lazy">
+        <img src="images/photo8.jpg" alt="Portrait photo" loading="lazy">
+        <img src="images/photo7.jpg" alt="Landscape photo" loading="lazy">
+        <img src="images/photo6.jpg" alt="Portrait photo" loading="lazy">
+        <img src="images/photo5.jpg" alt="Portrait photo" loading="lazy">
+        <img src="images/photo4.jpg" alt="Landscape photo" loading="lazy">
+        <img src="images/photo3.jpg" alt="Landscape photo" loading="lazy">
+        <img src="images/photo2.jpg" alt="Portrait photo" loading="lazy">
+      <img src="images/photo1.jpg" alt="Portrait photo" loading="lazy">
     </div>
   </section>
 
@@ -59,28 +62,40 @@
     </p>
   </footer>
 
-  <!-- Lightbox -->
+  
+  <!-- 🔹 Lightbox markup (NEW but correct placement) -->
   <div class="lightbox" id="lightbox">
     <img src="" alt="Expanded photo">
   </div>
 
-    <!-- Lightbox Script -->
-    <script>
+  <!-- 🔹 Lightbox JS (UPDATED to match CSS animation) -->
+  <script>
     const images = document.querySelectorAll('.grid img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
 
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+      lightboxImg.src = '';
+    }
+
     images.forEach(img => {
-        img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-        });
+      img.addEventListener('click', () => openLightbox(img.src));
     });
 
-    lightbox.addEventListener('click', () => {
-        lightbox.style.display = 'none';
+    lightbox.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
     });
-    </script>
+  </script>
   
 </body>
 </html>
