@@ -205,6 +205,13 @@ body.no-scroll {
   text-decoration: underline;
 }
 
+/* Hide navigation when lightbox is open */
+body.lightbox-open .nav {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
 /* Mobile navigation improvement */
 @media (max-width: 768px) {
   .nav {
