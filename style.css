@@ -88,10 +88,29 @@ h2 {
 }
 
 /* About */
-.about p {
-  max-width: 700px;
-  color: #444;
-  font-weight: 400;
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-content img {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-content p {
+  max-width: 500px;
+}
+
+.about img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Contact */
@@ -203,4 +222,14 @@ body.no-scroll {
   body {
     padding-bottom: 100px;
   }
+
+    .about-content {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .about-content img {
+        max-width: 80%;
+    }
+
 }
