@@ -36,18 +36,78 @@
 
     <div class="grid">
         <!-- lazy loading added -->
-        <img src="images/photo12.jpg" alt="Portrait photo" loading="lazy">
-        <img src="images/photo11.jpg" alt="Portrait photo" loading="lazy">
-        <img src="images/photo10.jpg" alt="Portrait photo" loading="lazy">
-        <img src="images/photo9.jpg" alt="Portrait photo" loading="lazy">
-        <img src="images/photo8.jpg" alt="Portrait photo" loading="lazy">
-        <img src="images/photo7.jpg" alt="Landscape photo" loading="lazy">
-        <img src="images/photo6.jpg" alt="Portrait photo" loading="lazy">
-        <img src="images/photo5.jpg" alt="Portrait photo" loading="lazy">
-        <img src="images/photo4.jpg" alt="Landscape photo" loading="lazy">
-        <img src="images/photo3.jpg" alt="Landscape photo" loading="lazy">
-        <img src="images/photo2.jpg" alt="Portrait photo" loading="lazy">
-      <img src="images/photo1.jpg" alt="Portrait photo" loading="lazy">
+        <img 
+            src="images/photo12.jpg" 
+            alt="Portrait photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+        <img 
+            src="images/photo11.jpg" 
+            alt="Portrait photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+        <img 
+            src="images/photo10.jpg" 
+            alt="Portrait photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+        <img 
+            src="images/photo9.jpg" 
+            alt="Portrait photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+        <img 
+            src="images/photo8.jpg" 
+            alt="Portrait photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+        <img 
+            src="images/photo7.jpg" 
+            alt="Landscape photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+        <img 
+            src="images/photo6.jpg" 
+            alt="Portrait photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+        <img 
+            src="images/photo5.jpg" 
+            alt="Portrait photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+        <img 
+            src="images/photo4.jpg" 
+            alt="Landscape photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+        <img 
+            src="images/photo3.jpg" 
+            alt="Landscape photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+        <img 
+            src="images/photo2.jpg" 
+            alt="Portrait photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+        >
+      <img 
+            src="images/photo1.jpg" 
+            alt="Portrait photo" 
+            loading="lazy"
+            class="lightbox-trigger"
+      >
     </div>
   </section>
 
@@ -56,7 +116,11 @@
     <h2>About</h2>
     
     <div class="about-content">
-        <img src="images/about-me.jpg" alt="Portrait of the photographer">
+        <img 
+            src="images/about-me.jpg" 
+            alt="Portrait of the photographer"
+            class="lightbox-trigger"
+        >
         <p>
             I’ve been shooting portraits since 2018, focusing on capturing the essence of the person with a calm visual style. Photography is a long-term passion
             and a creative outlet for me.
@@ -82,7 +146,7 @@
 
   <!-- 🔹 Lightbox JS (UPDATED to match CSS animation) -->
   <script>
-    const images = document.querySelectorAll('.grid img');
+    const images = document.querySelectorAll('.lightbox-trigger');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
 
